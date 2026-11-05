@@ -5,92 +5,230 @@
 :root {
   color-scheme: light;
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color: #202938;
-  background: #f4f6f9;
+  color: #263449;
+  background: #f3f5f8;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .page {
-  width: min(100% - 32px, 900px);
-  margin: 48px auto;
+  width: min(100% - 36px, 1080px);
+  margin: 32px auto;
 }
 
-.policy-card {
+.policy {
   overflow: hidden;
-  background: #ffffff;
+  background: #fff;
   border: 1px solid #e5e9f0;
-  border-radius: 14px;
-  box-shadow: 0 12px 36px rgba(25, 39, 61, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 14px 40px rgba(20, 32, 50, .08);
 }
 
-.page-header {
-  padding: 30px 40px 26px;
+.hero {
+  padding: 38px 46px 34px;
+  color: #fff;
   background: #111827;
-  color: #ffffff;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
-  color: #aebbd0;
+  margin: 0 0 10px;
+  color: #a9c4ec;
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 750;
+  letter-spacing: .13em;
   text-transform: uppercase;
 }
 
-h1 {
+.hero h1 {
   margin: 0;
-  font-size: clamp(25px, 4vw, 34px);
-  line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.035em;
+  font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.18;
+  letter-spacing: -.04em;
 }
 
-.policy-content {
-  padding: 30px 40px 38px;
-}
-
-h2 {
-  margin: 0 0 12px;
-  color: #111827;
-  font-size: 22px;
-  line-height: 1.35;
-}
-
-h3 {
-  margin: 22px 0 4px;
-  color: #202938;
+.hero-copy {
+  max-width: 700px;
+  margin: 14px 0 0;
+  color: #d5deeb;
   font-size: 16px;
-  line-height: 1.45;
-  font-weight: 700;
 }
 
-p {
-  margin: 0;
-  color: #4b5563;
+.effective-date {
+  margin: 14px 0 0;
+  color: #aebbd0;
+  font-size: 13px;
+}
+
+.policy-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr);
+  align-items: start;
+}
+
+.toc {
+  position: sticky;
+  top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 36px);
+  overflow: auto;
+  padding: 28px 22px;
+  background: #f8fafc;
+  border-right: 1px solid #e8edf3;
+}
+
+.toc h2 {
+  margin: 0 0 6px;
+  color: #172235;
   font-size: 15px;
 }
 
-@media (max-width: 600px) {
+.toc a {
+  color: #52647c;
+  font-size: 12px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: #245da5;
+  text-decoration: underline;
+}
+
+.content {
+  min-width: 0;
+  padding: 34px 42px 42px;
+}
+
+.content section {
+  scroll-margin-top: 20px;
+  margin: 0 0 30px;
+}
+
+.content section:last-child {
+  margin-bottom: 0;
+}
+
+.content h2 {
+  margin: 0 0 10px;
+  color: #152238;
+  font-size: 20px;
+  line-height: 1.35;
+  letter-spacing: -.02em;
+}
+
+.content p,
+.content ul {
+  color: #4b586b;
+  font-size: 14px;
+}
+
+.content p {
+  margin: 0 0 12px;
+}
+
+.content ul {
+  margin: 8px 0 14px;
+  padding-left: 22px;
+}
+
+.content li {
+  margin: 7px 0;
+}
+
+.content strong {
+  color: #26364d;
+}
+
+.content a {
+  color: #245da5;
+}
+
+.contact-card {
+  display: grid;
+  gap: 4px;
+  width: fit-content;
+  min-width: min(100%, 320px);
+  margin-top: 14px;
+  padding: 16px 18px;
+  background: #f7f9fc;
+  border: 1px solid #e5eaf1;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.contact-card span {
+  color: #667387;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 28px;
+  color: #778397;
+  background: #fafbfd;
+  border-top: 1px solid #e8edf3;
+  font-size: 12px;
+}
+
+.footer a {
+  color: #315d9b;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
   .page {
-    width: min(100% - 20px, 900px);
-    margin: 16px auto;
+    width: min(100% - 20px, 1080px);
+    margin: 12px auto;
   }
 
-  .policy-card {
-    border-radius: 10px;
+  .policy {
+    border-radius: 11px;
   }
 
-  .page-header {
-    padding: 24px 22px;
+  .hero {
+    padding: 27px 23px 25px;
   }
 
-  .policy-content {
-    padding: 24px 22px 30px;
+  .policy-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .toc {
+    position: static;
+    max-height: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 14px;
+    padding: 20px 23px;
+    border-right: 0;
+    border-bottom: 1px solid #e8edf3;
+  }
+
+  .toc h2 {
+    grid-column: 1 / -1;
+  }
+
+  .content {
+    padding: 27px 23px 32px;
+  }
+
+  .footer {
+    padding: 16px 23px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .toc {
+    grid-template-columns: 1fr;
   }
 }
